@@ -1,0 +1,4 @@
+
+export const REACT_APP_AUTH0_DOMAIN    = 'domain.auth0.com';
+export const REACT_APP_AUTH0_CLIENT_ID = '<ClientId Hash>';
+
