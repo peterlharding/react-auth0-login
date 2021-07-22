@@ -1,4 +1,13 @@
 
+
+// Client authenticatiuon setup values
+
 export const REACT_APP_AUTH0_DOMAIN    = 'domain.auth0.com';
 export const REACT_APP_AUTH0_CLIENT_ID = '<ClientId Hash>';
 
+// API Specific setup values.
+
+export const API_PORT                  = 4000;
+export const APP_ORIGIN                = 'http://localhost:3000';
+export const AUTH0_AUDIENCE            = 'http://audience.demo';
+export const AUTH0_ISSUER              = 'https://domain.auth0.com/';

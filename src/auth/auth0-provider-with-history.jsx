@@ -2,7 +2,7 @@
 
 import {useHistory} from  'react-router-dom';
 import {Auth0Provider} from "@auth0/auth0-react";
-import {REACT_APP_AUTH0_DOMAIN, REACT_APP_AUTH0_CLIENT_ID} from './localization';
+import {REACT_APP_AUTH0_DOMAIN, REACT_APP_AUTH0_CLIENT_ID, AUTH0_AUDIENCE} from '../localization';
 
 const Auth0ProviderWithHistory = ({children}) => {
 
@@ -10,7 +10,7 @@ const Auth0ProviderWithHistory = ({children}) => {
   
   const onRedirectCallback = (appState) => {
     history.push(appState?.returnTo || window.location.pathname);
-  }
+  };
 
   return (
     <Auth0Provider
@@ -18,6 +18,7 @@ const Auth0ProviderWithHistory = ({children}) => {
       clientId={REACT_APP_AUTH0_CLIENT_ID}
       redirectUri={window.location.origin}
       onRedirectCallback={onRedirectCallback}
+      audience={AUTH0_AUDIENCE}
     >
       {children}
     </Auth0Provider>

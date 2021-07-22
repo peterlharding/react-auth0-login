@@ -18,6 +18,8 @@ package-lock.json
 # Sensitive Data
 localization.js
 localization.ts
+api-localization.js
+src/server/.env
 
 # IDE
 .idea/

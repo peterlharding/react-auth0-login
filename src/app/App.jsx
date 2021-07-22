@@ -11,6 +11,8 @@ import {Home, ExternalApi} from "../views";
 import Loading from '../components/Loading';
 import Profile from '../components/Profile';
 
+import ProtectedRoute from '../auth/protected-route';
+
 import "./app.css";
 
 const App = () => {
@@ -18,8 +20,10 @@ const App = () => {
   const {isLoading} = useAuth0();
 
   if (isLoading) {
-    return <Loading />
-  };
+    return (
+      <Loading />
+    );
+  }
 
   return (
     <div id="app" className="d-flex flex-column h-100">
@@ -27,13 +31,14 @@ const App = () => {
       <Container className="flex-grow-1 mt-5">
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/external-api" component={ExternalApi} />
+          <ProtectedRoute path="/profile" component={Profile} />
+          <ProtectedRoute path="/external-api" component={ExternalApi} />
         </Switch>
       </Container>
       <Footer />
     </div>
   );
-};
+
+}
 
 export default App;
